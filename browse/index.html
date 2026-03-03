@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+
+    <title>EilishTV!</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VRV0Y4Z5P"></script>
+</head>
+<body>
+
+    <!-- Perfil Overlay -->
+    <div class="profileOverlay" id="profileOverlay">
+        <h1>¿Quién está viendo?</h1>
+        <div class="profiles" id="profiles"></div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <a class="navLogo" href="/index.html">
+            <img src="../images/extras/logo.png" alt="EilishTV"/>
+        </a>
+
+        <!-- Menú principal -->
+        <div class="navMenu">
+            <a href="/browse/">Inicio</a>
+            <a href="#">Películas</a>
+            <a href="#">Shows</a>
+            <a href="#">Series</a>
+            <a href="#">Mi lista</a>
+        </div>
+
+        <!-- Buscador -->
+        <div class="searchContainer">
+            <input type="text" class="searchInput" placeholder="Buscar..." />
+            <button class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <!-- Menú de usuario -->
+        <div class="userMenu">
+            <img class="userImg" src="../images/avatars/avatar1.jpeg" alt="avatar" />
+            <div class="dropDown">
+                <div class="profileHeader" id="openProfiles">
+                    <img src="../images/avatars/avatar1.jpeg" alt="avatar">
+                    <span id="navProfileName">User</span>
+                    <i class="fas fa-chevron-right" id="profileArrow"></i>
+                </div>
+
+                <a href="/profile/">Administrar perfil</a>
+                <a href="#">Cuenta</a>
+                <a href="https://instagram.com/eilishtvwebsite">Instagram</a>
+                <a href="#" id="logoutBtn">Cerrar sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <main>
+        <div id="proximamente"></div>
+        <div id="tendencias"></div>
+        <div id="contenedor"></div>
+    </main>
+
+    <!-- Banner de cookies -->
+    <div id="cookie-banner" style="
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #111827;
+        color: #ffffff;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    ">
+        <span>Este sitio usa cookies de análisis. Aceptalas para habilitar Google Analytics.</span>
+        <button onclick="acceptCookies()" style="
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        ">Aceptar</button>
+    </div>
+
+    <!-- Script de cookies y GA -->
+    <script>
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            loadAnalytics();
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        function loadAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8VRV0Y4Z5P';
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+
+            gtag('js', new Date());
+            gtag('config', 'G-8VRV0Y4Z5P');
+        }
+
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+            loadAnalytics();
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer style="background-color: #090b13; color: #fff; padding: 2rem 1rem; font-family: sans-serif; margin-top: 4rem;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <div style="flex: 1 1 300px;">
+                <h2 style="margin: 0 0 0.5rem; font-size: 1.1rem;">EilishTV!</h2>
+                <p style="margin: 0; font-size: 0.9rem;">Personal project created for non-commercial purposes.</p>
+                <p style="margin: 0; font-size: 0.9rem;">&copy; 2026 EilishTV — Created in Argentina.
+</p>
+            </div>
+
+            <div style="flex: 1 1 300px; text-align: right;">
+                <a href="https://www.instagram.com/eilishtvwebsite/" style="color: #bbb; margin-left: 1rem; text-decoration: none; font-size: 0.9rem;">Instagram</a>
+                <a href="https://eilishtv.github.io/home" target="_blank" style="color: #bbb; margin-left: 1rem; text-decoration: none; font-size: 0.9rem;">Website</a>
+                <a href="https://x.com/ccxannyv?s=11&t=rKBTa20zvrb5aXc0rHdxKQ" target="_blank" style="color: #bbb; margin-left: 1rem; text-decoration: none; font-size: 0.9rem;">Twitter X</a>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>    
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="../nav.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    <script type="module" src="../js/profileOverlay.js"></script>
+    <script type="module" src="../js/profile.js"></script>
+    <script src="../js/slide.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    
+</html>
