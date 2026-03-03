@@ -1,0 +1,267 @@
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: black;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Barra superior */
+.topBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 25px 40px;
+    z-index: 10;
+}
+
+.loginLink {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.loginLink:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+
+    /* Imagen futura */
+    background: 
+        
+        url("https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/65A85F900F011BA36370BEAED7B9A509E2883452DF44E8D8C0E04765719B1A1A/compose?format=webp&width=1600");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 80px;
+}
+
+/* Logo */
+.logo {
+    width: 170px;
+    margin-bottom: 20px;
+}
+
+/* Título */
+.title {
+    font-size: 28px;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+/* Precio */
+.price {
+    font-size: 20px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.enter {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* Caja mail + botón */
+.cta {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Input */
+.cta input {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+/* Botón */
+.cta button {
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+
+    background-color: #0063e5; /* azul tipo Disney */
+    color: white;
+
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.cta button:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+
+/* REGISTER */
+
+.registerPage {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.95)),
+        url("../images/extras/home-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.registerBox {
+    width: 100%;
+    max-width: 520px;
+}
+
+.registerBox h2 {
+    margin-bottom: 10px;
+}
+
+.desc {
+    opacity: 0.8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.emailInfo {
+    background: rgba(255,255,255,0.08);
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.emailInfo .edit {
+    margin-left: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.registerBox label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.registerBox input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.rules {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.check {
+    font-size: 12px;
+    opacity: 0.9;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.continueBtn {
+    width: 100%;
+    padding: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #0063e5;
+    color: white;
+}
+
+.continueBtn:hover {
+    opacity: 0.9;
+}
+
+/*LOGIN*/ 
+
+.loginPage {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    min-height: 100vh;
+     min-height: 100vh;
+    padding: 20px;
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.95)),
+        url("../images/extras/home-background.png");
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+
+}
+
+.loginBox {
+    width: 100%;
+    padding: 25px;
+    max-width: 520px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.log-logo {
+    width: 150px;
+    
+}
+
+.loginBox input {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+}
+
+.loginBox button {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    background: #1e90ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loginBox button:hover {
+    opacity: 0.9;
+}
